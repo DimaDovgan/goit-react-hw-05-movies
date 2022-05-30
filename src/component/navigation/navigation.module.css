@@ -1,0 +1,14 @@
+
+.linkNav{
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 500;
+    color: gray;
+    font-size: 18px;
+    list-style: none;
+}
+.activeLink{
+    compose: linkNaw;
+    color:brown;
+}
