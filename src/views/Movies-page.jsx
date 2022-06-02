@@ -1,7 +1,7 @@
 import { SerchFilm } from "../component/serch-film/Serch-film"
 import { useState, useEffect } from "react"
 import { apiService } from "../api-srvice"
-import {useParams,useLocation} from "react-router-dom";
+import {useParams,useLocation,useNavigate} from "react-router-dom";
 import { SearchList } from "../component/Search-List";
 
 const MoviesPage = () => {
@@ -9,7 +9,8 @@ const MoviesPage = () => {
     const [filmArr, setFilmArr] = useState([]);
     const [error, setError] = useState(null);
     let { id } = useParams();
-    let {search} = useLocation();
+    let { search } = useLocation();
+    
     
     useEffect(() => {
         let serchTitle=search.slice(1)
@@ -22,7 +23,7 @@ const MoviesPage = () => {
     },[search])
 
     return <div><SerchFilm />
-        {filmArr.length > 0 && <SearchList filmArr={filmArr} config={"/movies"}/>}
+        {filmArr.length > 0 && <SearchList filmArr={filmArr} config={"/movies"} serchTitle={search}/>}
         
     </div>
 }

@@ -1,4 +1,4 @@
-import { useParams} from "react-router-dom";
+import { useParams,useLocation} from "react-router-dom";
 import { apiService } from "../../api-srvice";
 import { useEffect, useState } from "react";
 import { CastComponentCart } from "./CastComponent-Card";
@@ -11,6 +11,7 @@ const ParamsFilm = () =>
     const [reviewsArr, setReviewsArr] = useState(null);
     const [castArr,setCastArr]=useState(null)
     const [err, setErr] = useState(null);
+    const locat = useLocation();
     useEffect(() => {
         switch (params) {
             case "cast":
