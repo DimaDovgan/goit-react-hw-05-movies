@@ -4,6 +4,9 @@ export const ReviewerCard = ({ reviewer }) => {
         <p>{ reviewer.content}</p>
         </div>
 }
+
+
+
 ReviewerCard.propTypes = {
   reviewer: PropTypes.object.isRequired
 };
